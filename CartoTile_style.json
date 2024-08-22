@@ -1,0 +1,75 @@
+{
+  "version": 8,
+  "name": "Empty Style",
+  "metadata": {"maputnik:renderer": "mlgljs"},
+  "sources": {
+    "v": {
+      "type": "vector",
+      "tiles": [
+        "https://k96mz.github.io/20240818CartoTileStylized/Data/VTstylized/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 0,
+      "maxzoom": 2
+    }
+  },
+  "sprite": "",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "bg",
+      "type": "background",
+      "layout": {"visibility": "visible"},
+      "paint": {"background-color": "rgb(255, 255, 255)"}
+    },
+    {
+      "id": "bnda",
+      "type": "fill",
+      "source": "v",
+      "source-layer": "bnda",
+      "maxzoom": 4,
+      "filter": ["none", ["==", "iso3cd", "ATA"]],
+      "paint": {"fill-color": "rgb(237, 237, 237)"}
+    },
+    {
+      "id": "bndl_solid",
+      "type": "line",
+      "source": "v",
+      "source-layer": "bndl",
+      "maxzoom": 4,
+      "filter": [
+        "any",
+        ["==", "bdytyp", 0],
+        ["==", "bdytyp", 1],
+        ["==", "bdytyp", 2]
+      ],
+      "paint": {"line-color": "rgb(77, 77, 77)", "line-width": 0.8}
+    },
+    {
+      "id": "bndl_dashed",
+      "type": "line",
+      "source": "v",
+      "source-layer": "bndl",
+      "maxzoom": 4,
+      "filter": ["all", ["==", "bdytyp", 3]],
+      "paint": {
+        "line-color": "rgb(77, 77, 77)",
+        "line-width": 0.8,
+        "line-dasharray": [3, 2]
+      }
+    },
+    {
+      "id": "bndl_dotted",
+      "type": "line",
+      "source": "v",
+      "source-layer": "bndl",
+      "maxzoom": 4,
+      "filter": ["all", ["==", "bdytyp", 4]],
+      "paint": {
+        "line-color": "rgb(77, 77, 77)",
+        "line-width": 0.8,
+        "line-dasharray": [1, 2]
+      }
+    }
+  ],
+  "id": "dgzy6oo"
+}
