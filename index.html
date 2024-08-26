@@ -69,7 +69,7 @@
     <script>
       const map = new maplibregl.Map({
         container: "map", // container id
-        attributionControl: true,
+        attributionControl: false,
         hash: true,
         renderWorldCopies: false,
         maxZoom: 3,
@@ -158,6 +158,8 @@
         },
         // maplibreLogo: true,
       });
+      map.addControl(new maplibregl.AttributionControl({ compact: false }));
+
       map.on("load", () => {
         map.addControl(new maplibregl.NavigationControl());
       });
